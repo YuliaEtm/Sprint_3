@@ -2,15 +2,15 @@ from selenium.webdriver.common.by import By
 
 class Locators:
     #личный кабинет кнопка войти
-    ACCOUNT_BUTTON = (By.XPATH, '//header/nav[1]/a[1]/p')
+    ACCOUNT_BUTTON = (By.XPATH, '//a [@href="/account"]')
     # Вызов формы рагистрация для нового
     REG_FORM_NEW = (By.XPATH, "//p[@class='undefined text text_type_main-default text_color_inactive mb-4']/a")
     # Поле регистрации имя
-    REG_NAME = (By.XPATH, "//form[@class='Auth_form__3qKeq mb-20']/fieldset[1]//input")
+    REG_NAME = (By.XPATH,"//label[contains(text(),'Имя')]/parent::div/input")
     #Поле регистрации E-mail
-    REG_EMAIL = (By.XPATH, "//form[@class='Auth_form__3qKeq mb-20']/fieldset[2]//input")
+    REG_EMAIL = (By.XPATH, "//label[contains(text(),'Email')]/parent::div/input")
     #Поле регистрации пароль
-    REG_PASS = (By.XPATH, "//form[@class='Auth_form__3qKeq mb-20']/fieldset[3]//input")
+    REG_PASS = (By.XPATH, "//label[contains(text(),'Пароль')]/parent::div/input")
     #Кнопка зарегистрироваться для нового, войти для существующего
     ENTRY_BUTTON = (By.XPATH, "//form[@class='Auth_form__3qKeq mb-20']/button")
     #Поле EMAIL для входа зарегистрированного пользователя
@@ -34,14 +34,22 @@ class Locators:
     # Кнопка выйти из личного кабинета
     EXIT_ACCOUNT = (By.XPATH, '//button[@class="Account_button__14Yp3 text text_type_main-medium text_color_inactive"]')
     #конструктор вкладка соусы(не активная)
-    SAUSE = (By.XPATH, '//div[@style="display: flex;"]/div[2]/span')
+    SAUSE = (By.XPATH, '// div[ @ style = "display: flex;"] // span[text() = "Соусы"]')
     # конструктор вкладка соусы(активная)
-    SAUSE_ACT = (By.XPATH, '//div[@style="display: flex;"]/div[2]')
+    SAUSE_ACT = (By.XPATH, '// div[ @ style = "display: flex;"] // span[text() = "Соусы"]/parent::div')
     # конструктор вкладка Начинки (не активная)
-    FILLING = (By.XPATH, '//div[@style="display: flex;"]/div[3]/span')
+    FILLING = (By.XPATH, '//div[@style="display: flex;"]//span[text()="Начинки"]')
     # конструктор вкладка Начинки (активная)
-    FILLING_ACT = (By.XPATH, '//div[@style="display: flex;"]/div[3]')
+    FILLING_ACT = (By.XPATH, '//div[@style="display: flex;"]//span[text()="Начинки"]/parent::div')
     # конструктор вкладка Булочки (не активная)
-    BUN = (By.XPATH, '//div[@style="display: flex;"]/div[1]/span')
+    BUN = (By.XPATH, '//div[@style="display: flex;"]//span[text()="Булки"]')
     # конструктор вкладка Булочки (активная)
-    BUN_ACT = (By.XPATH, '//div[@style="display: flex;"]/div[1]')
+    BUN_ACT = (By.XPATH, '//div[@style="display: flex;"]//span[text()="Булки"]/parent::div')
+    # Логин для зарегистрированнного пользователя
+
+    LOGIN_REG = 'Etm878@ya.ru'
+    #Пароль для зарегистрированного пользователя
+    PASSWORD_REG = '888888'
+    # Имя для зарегистрированного пользователя
+    NAME = 'Etm'
+    PASSWORD_INVALID = '88858'
