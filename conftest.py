@@ -16,10 +16,9 @@ def driver():
 
 @pytest.fixture
 def login(driver):
-    driver.find_element(By.XPATH, '//header/nav[1]/a[1]/p').click()
+    driver.find_element(By.XPATH, '//a [@href="/account"]').click()
     driver.find_element(By.XPATH, '// form[@class ="Auth_form__3qKeq mb-20"] // input[@ name="name"]').send_keys(
-        Locators.LOGIN_REG)
+        'Etm878@ya.ru')
     driver.find_element(By.XPATH, '// form[@class ="Auth_form__3qKeq mb-20"] // input[@ name="Пароль"]').send_keys(
-        Locators.PASSWORD_REG)
+        '888888')
     driver.find_element(By.XPATH, '//form [@class="Auth_form__3qKeq mb-20"]/button').click()
-
